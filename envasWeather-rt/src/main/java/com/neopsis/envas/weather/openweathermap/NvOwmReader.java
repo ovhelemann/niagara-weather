@@ -50,7 +50,7 @@ public class NvOwmReader extends NvBaseReader {
     public void getForecast(ArrayList forecasts, String location, String appid) throws NvOwmException {
 
         BForecast fc   = null;
-        String    link = "http://api.openweathermap.org/data/2.5/forecast?q=" + location + "&mode=json&units=imperial&appid="
+        String    link = "/data/2.5/forecast?q=" + location + "&mode=json&units=imperial&appid="
                          + appid;
         String    json = read(link);
 
@@ -169,7 +169,8 @@ public class NvOwmReader extends NvBaseReader {
     public void getCurrentConditions(BCurrentConditions cond, BSunPosition sunPos, String location, String appid)
             throws NvOwmException {
 
-        String link = "http://api.openweathermap.org/data/2.5/weather?q=" + location + "&mode=json&units=imperial&appid=" + appid;
+        //String link = "http://api.openweathermap.org/data/2.5/weather?q=" + location + "&mode=json&units=imperial&appid=" + appid;
+        String link = "/data/2.5/weather?q=" + location + "&mode=json&units=imperial&appid=" + appid;
 
         try {
 

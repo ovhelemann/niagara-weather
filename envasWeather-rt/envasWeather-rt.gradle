@@ -5,7 +5,6 @@ niagaraModule {
     preferredSymbol = "neo"
     moduleName      = "envasWeather"
     runtimeProfile  = "rt"
-    certAlias       = "neopsis-code-sign"
 }
 
 compileJava {
@@ -31,6 +30,7 @@ dependencies {
     compile "Tridium:baja:4.0.0"
     compile "Tridium:js-ux:4.0.0"
     compile "Tridium:weather-rt:4.0.0"
+    compile "Tridium:net-rt:4.0.0"
 }
 
 jar {
@@ -39,15 +39,15 @@ jar {
         include '*.**'
     }
 
-    doLast {
-        [gradle.ext.niagara_test_home + '/modules', gradle.ext.niagara_modules, '../lib'].each { dest ->
-            copy {
-                from(project.buildDir.toString() + '/libs')
-                include(baseName + '-' + version + '.jar')
-                rename(baseName + '-' + version + '.jar', baseName + '.jar')
-                into { file(dest) }
-            }
-        }
-    }
+//    doLast {
+//        [gradle.ext.niagara_test_home + '/modules', gradle.ext.niagara_modules, '../lib'].each { dest ->
+//            copy {
+//                from(project.buildDir.toString() + '/libs')
+//                include(baseName + '-' + version + '.jar')
+//                rename(baseName + '-' + version + '.jar', baseName + '.jar')
+//                into { file(dest) }
+//            }
+//        }
+//    }
 }
 
